@@ -9,7 +9,11 @@ export interface LoginPasswordState {}
 class LoginPassword extends React.Component<LoginPasswordProps, LoginPasswordState> {
   render() {
     return (
-      <TextInput secureTextEntry={true} placeholder={"Password"} style={styles.loginPassword}/>
+      <TextInput 
+        secureTextEntry={true} 
+        placeholder={"Password"} 
+        style={styles.loginPassword}
+        onChangeText={password => this.setState({password})}/>
     );
   }
 }

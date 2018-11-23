@@ -22,8 +22,9 @@ import { SvgScreen } from './SvgScreen'
 import { SystemFontsScreen } from './constants/SystemFontsScreen'
 import { VectorIconsScreen } from './VectorIconsScreen'
 
-import LoginScreen from './screens/LoginScreen'
+import LoginScreen from './screens/LoginScreen';
 import SettingsScreen from './screens/SettingsScreen';
+import SignupScreen from './screens/SignupScreen';
 
 export default createStackNavigator({
   // tslint:disable:object-literal-sort-keys
@@ -31,6 +32,7 @@ export default createStackNavigator({
 
   Login: { screen: LoginScreen },
   Settings: { screen: SettingsScreen },
+  Signup: { screen: SignupScreen }
   /*Asset: { screen: AssetScreen },
   Audio: { screen: AudioScreen },
   BlurView1: { screen: BlurView1Screen },

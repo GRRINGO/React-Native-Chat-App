@@ -1,10 +1,16 @@
-import React, {Component} from 'react';
+import React, {Component, } from 'react';
+//import * as React from 'react';
 import Layout from '../constants/Layout';
 import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import Colors from '../constants/Colors';
+import SignupScreen from '../screens/SignupScreen';
+import * as firebase from 'firebase';
+
 
 const pressCreateAccount = () => {
-
+    return (
+      <SignupScreen />
+    );
 }
 
 const pressForgotPassword = () => {

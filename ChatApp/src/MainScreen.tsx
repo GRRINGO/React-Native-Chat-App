@@ -51,7 +51,8 @@ export class MainScreen extends Component<NavigationScreenProps> {
   private destinationAndTitlePairs: Array<DestinationAndTitle> = [
     
     new DestinationAndTitle('Login'),
-    new DestinationAndTitle('Settings')
+    new DestinationAndTitle('Settings'),
+    new DestinationAndTitle('Signup')
     
     /*new DestinationAndTitle('Accelerometer'),
     new DestinationAndTitle('Amplitude'),

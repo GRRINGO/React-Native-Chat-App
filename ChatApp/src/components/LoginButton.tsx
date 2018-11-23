@@ -12,6 +12,7 @@ export interface LoginButtonState {
 
 const onPressLogin = (state) => {
   const {username, password} = state;
+  console.log(username);
 }
 
 class LoginButton extends React.Component<LoginButtonProps, LoginButtonState> {
@@ -26,7 +27,7 @@ class LoginButton extends React.Component<LoginButtonProps, LoginButtonState> {
     return (
       <TouchableOpacity
         style={styles.loginButton} 
-        onPress={onPressLogin(this.state)}>
+        onPress={() => onPressLogin(this.state)}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity> 
     );
