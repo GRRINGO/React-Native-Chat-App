@@ -24,6 +24,7 @@ import { VectorIconsScreen } from './VectorIconsScreen'
 
 import LoginScreen from './screens/LoginScreen'
 import SettingsScreen from './screens/SettingsScreen';
+import ChatScreen from './screens/ChatScreen';
 
 export default createStackNavigator({
   // tslint:disable:object-literal-sort-keys
@@ -31,6 +32,7 @@ export default createStackNavigator({
 
   Login: { screen: LoginScreen },
   Settings: { screen: SettingsScreen },
+  Chat: { screen: ChatScreen },
   /*Asset: { screen: AssetScreen },
   Audio: { screen: AudioScreen },
   BlurView1: { screen: BlurView1Screen },
