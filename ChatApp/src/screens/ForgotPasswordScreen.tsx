@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { BackHandler, Text, TouchableOpacity, TextInput, StyleSheet, KeyboardAvoidingView } from 'react-native';
+import { BackHandler, Text, TouchableOpacity, TextInput, StyleSheet, KeyboardAvoidingView, Alert } from 'react-native';
 import Wallpaper from '../components/Wallpaper';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
 
 const handleResetPress = (email: string) => {
-  alert(email);
+  Alert.alert(email);
 }
 
 export interface ForgotPasswordScreenProps {
@@ -23,14 +23,14 @@ export default class ForgotPasswordScreen extends Component<ForgotPasswordScreen
     }
   }
   componentDidMount() {
-    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+    BackHandler.addEventListener('hardwareBackPress', () => {
       this.props.navigation.navigate('LoginScreen');
       return true;
     });
   }
 
   componentWillUnmount() {
-    this.backHandler.remove();
+    BackHandler.removeEventListener('hardwareBackPress', () => {});
   }
 
   handleOnPress = () => {

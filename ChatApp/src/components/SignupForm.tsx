@@ -1,8 +1,8 @@
 import * as React from "react";
-import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
-import firebase from 'firebase';
+import firebase from 'firebase-react-native';
 import { withNavigation } from 'react-navigation';
 
 export interface SignupFormProps {
@@ -37,10 +37,10 @@ class SignupForm extends React.Component<SignupFormProps, SignupFormState> {
       const user = firebase.auth().createUserWithEmailAndPassword(username, password1)
         .catch((error) => {
           var errorMessage = error.message;
-          alert(errorMessage);
+          Alert.alert(errorMessage);
         });
     } else {
-      alert("Passwords do not match");
+      Alert.alert("Passwords do not match");
     };
   }
 

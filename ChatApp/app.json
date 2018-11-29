@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Expo and TypeScript",
+    "name": "Awesome Chatapp",
     "description": "Showcase of an Expo app coded in TypeScript.",
-    "slug": "expo-and-typescript",
+    "slug": "Awesome-Chatapp",
     "privacy": "public",
     "sdkVersion": "31.0.0",
     "version": "1.0.0",
@@ -18,9 +18,19 @@
         "mp4"
       ]
     },
-    "ios": {
-      "supportsTablet": true
+    "android": {
+      "package": "com.mcc.chatapp",
+      "versionCode": 1,
+      "icon": "./assets/icons/app-icon.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icons/app-icon.png",
+        "backgroundColor": "#FFFFFF",
+        "backgroundImage": "./assets/icons/app-icon.png"
+      }
     },
-    "githubUrl": "https://github.com/janaagaard75/expo-and-typescript"
+    "ios": {
+      "bundleIdentifier": "com.mcc.chatapp",
+      "supportsTablet": true
+    }
   }
 }

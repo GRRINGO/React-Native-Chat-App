@@ -1,13 +1,14 @@
 import React, {Component} from "react";
-import {KeyboardAvoidingView, StyleSheet, Button, View} from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Button, View, Alert, } from "react-native";
 import Wallpaper from "../components/Wallpaper";
 import SettingPicture from "../components/SettingPicture";
 import SettingName from "../components/SettingName";
 import SettingResolution from "../components/SettingResolution";
 import SettingSave from "../components/SettingSave";
 import Layout from "../constants/Layout";
-import firebase from "firebase";
+import firebase from "firebase-react-native";
 import { ImagePicker, Permissions } from "expo";
+// import ImagePicker from 'react-native-image-picker';
 
 export interface SettingsScreenProps {
   navigation: any
@@ -21,6 +22,15 @@ export interface SettingsScreenState {
   dialogPictureVisible: boolean,
   resolution: "full" | "high" | "low",
   mutable_resolution: "full" | "high" | "low"
+}
+
+const options = {
+  title: 'Select Avatar',
+  customButtons: [{ name: 'fb', title: 'Choose Photo from Facebook' }],
+  storageOptions: {
+    skipBackup: true,
+    path: 'images',
+  },
 }
 
 export default class SettingsScreen extends Component<SettingsScreenProps, SettingsScreenState> {
@@ -74,16 +84,18 @@ export default class SettingsScreen extends Component<SettingsScreenProps, Setti
     this.setState({ dialogPictureVisible: false});
     const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     if (status === "granted") {
-      let result = await ImagePicker.launchCameraAsync({
-        allowsEditing: true,
-        aspect: [4, 3],
-      });
+      let result = await ImagePicker.launchCameraAsync(
+        {
+          allowsEditing: true,
+          aspect: [4, 3],
+        }
+      );
 
-      console.log(result);
+      // console.log(result);
       if (!result.cancelled) {
         this.setState({mutable_image: result.uri});
     }
-      console.log(this.state.mutable_image);
+      // console.log(this.state.mutable_image);
     }
   }
 
@@ -94,7 +106,7 @@ export default class SettingsScreen extends Component<SettingsScreenProps, Setti
       aspect: [4, 3],
     });
 
-    console.log(result);
+    // console.log(result);
     if (!result.cancelled) {
       this.setState({mutable_image: result.uri});
     }
@@ -124,9 +136,9 @@ export default class SettingsScreen extends Component<SettingsScreenProps, Setti
     if (this.state.image === this.state.mutable_image &&
         this.state.resolution === this.state.mutable_resolution &&
         this.state.displayname === this.state.mutable_displayname) {
-      alert("Nothing to save");
+      Alert.alert("Nothing to save");
     } else {
-      alert("Changes to be saved");
+      Alert.alert("Changes to be saved");
     }
   }
 

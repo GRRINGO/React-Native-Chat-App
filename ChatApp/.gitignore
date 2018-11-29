@@ -3,3 +3,4 @@
 
 *.log
 environment.js
+dist/

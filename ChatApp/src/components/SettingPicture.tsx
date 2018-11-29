@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../constants/Layout";
 import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
-import default_image from "../../assets/images/robot-dev.png";
+import * as default_image from "../assets/images/robot-dev.png";
 import Dialog from "react-native-dialog";
 
 export interface SettingPictureProps {
@@ -59,13 +59,14 @@ const DEVICE_HEIGHT = Layout.window.height;
 const styles = StyleSheet.create({
   container: { 
     width: DEVICE_WIDTH,
+    flex: 1
   },
   image: {
-    resizeMode: "cover",
-    justifyContent: "center",
-    alignSelf: "center",
+    // resizeMode: "cover",
+    // justifyContent: "center",
+    // alignSelf: "center",
     width: 150,
-    height: 150,
+    // height: 150,
   },
 });
 

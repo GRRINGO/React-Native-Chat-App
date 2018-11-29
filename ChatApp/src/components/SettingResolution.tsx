@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from '../constants/Layout';
 import Colors from "../constants/Colors";
-import {View, Text, StyleSheet, TouchableOpacity, Picker} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Picker, Alert} from "react-native";
 
 export interface SettingResolutionProps {
   resolution: "low" | "high" | "full",
@@ -23,7 +23,7 @@ class SettingResolution extends React.Component<SettingResolutionProps, SettingR
         borderColor: "#d6d7da"}}>
         {/*<TouchableOpacity
         style={styles.settingResolutionButton}
-        onPress={() => alert("Change resolution")}>
+        onPress={() => Alert.alert("Change resolution")}>
         <Text style={styles.settingResolutionText}>Resolution: {this.state.resolution}</Text>
       </TouchableOpacity>*/}
       <Picker

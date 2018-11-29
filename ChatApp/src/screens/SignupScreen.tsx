@@ -9,14 +9,14 @@ export interface SignupScreenProps {
 export interface SignupScreenState { }
 export default class SignupScreen extends Component<SignupScreenProps, SignupScreenState> {
   componentDidMount() {
-    this.backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
+    BackHandler.addEventListener('hardwareBackPress', () => {
       this.props.navigation.navigate('LoginScreen');
       return true;
     });
   }
 
   componentWillUnmount() {
-    this.backHandler.remove();
+    BackHandler.removeEventListener('hardwareBackPress', () => { });
   }
 
 	render() {
