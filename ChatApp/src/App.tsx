@@ -7,9 +7,11 @@ import ForgotPasswordScreen from "./screens/ForgotPasswordScreen"
 import LoginScreen from "./screens/LoginScreen"
 // import ChatScreen from "./screens/ChatScreen"
 import SettingsScreen from "./screens/SettingsScreen"
-import firebase from 'firebase-react-native';
+import firebase from 'firebase';
 
-var ENV = require('../environment.js')
+import { ENV } from '../environment';
+
+console.log(ENV.APIKEY);
 
 var config = {
   apiKey: ENV.APIKEY,

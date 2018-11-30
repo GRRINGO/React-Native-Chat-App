@@ -6,7 +6,7 @@ import SettingName from "../components/SettingName";
 import SettingResolution from "../components/SettingResolution";
 import SettingSave from "../components/SettingSave";
 import Layout from "../constants/Layout";
-import firebase from "firebase-react-native";
+import firebase from "firebase";
 import { ImagePicker, Permissions } from "expo";
 // import ImagePicker from 'react-native-image-picker';
 
@@ -93,7 +93,7 @@ export default class SettingsScreen extends Component<SettingsScreenProps, Setti
 
       // console.log(result);
       if (!result.cancelled) {
-        this.setState({mutable_image: result.uri});
+        // this.setState({mutable_image: result.uri});
     }
       // console.log(this.state.mutable_image);
     }
@@ -108,7 +108,7 @@ export default class SettingsScreen extends Component<SettingsScreenProps, Setti
 
     // console.log(result);
     if (!result.cancelled) {
-      this.setState({mutable_image: result.uri});
+      // this.setState({mutable_image: result.uri});
     }
   }
 

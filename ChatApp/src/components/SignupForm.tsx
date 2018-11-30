@@ -2,7 +2,7 @@ import * as React from "react";
 import { KeyboardAvoidingView, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
-import firebase from 'firebase-react-native';
+import firebase from 'firebase';
 import { withNavigation } from 'react-navigation';
 
 export interface SignupFormProps {

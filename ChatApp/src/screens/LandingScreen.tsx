@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import firebase from 'firebase-react-native';
+import firebase from 'firebase';
 
 export interface LandingScreenProps {
   navigation: any

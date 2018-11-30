@@ -8,9 +8,9 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "primaryColor": "#fff",
-    "icon": "./assets/icons/app-icon.png",
+    "icon": "./src/assets/icons/app-icon.png",
     "loading": {
-      "icon": "./assets/icons/loading-icon.png"
+      "icon": "./src/assets/icons/loading-icon.png"
     },
     "packagerOpts": {
       "assetExts": [
@@ -19,17 +19,17 @@
       ]
     },
     "android": {
-      "package": "com.mcc.chatapp",
+      "package": "com.mcc.awesomechatapp",
       "versionCode": 1,
-      "icon": "./assets/icons/app-icon.png",
+      "icon": "./src/assets/icons/app-icon.png",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icons/app-icon.png",
+        "foregroundImage": "./src/assets/icons/app-icon.png",
         "backgroundColor": "#FFFFFF",
-        "backgroundImage": "./assets/icons/app-icon.png"
+        "backgroundImage": "./src/assets/icons/app-icon.png"
       }
     },
     "ios": {
-      "bundleIdentifier": "com.mcc.chatapp",
+      "bundleIdentifier": "com.mcc.awesomechatapp",
       "supportsTablet": true
     }
   }

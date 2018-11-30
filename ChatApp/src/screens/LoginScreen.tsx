@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import LoginForm from '../components/LoginForm';
 import Wallpaper from '../components/Wallpaper';
 import SignupSection from '../components/SignupSection';
-import firebase from 'firebase-react-native';
+import firebase from 'firebase';
 
 export interface LoginScreenProps {
   navigation: any

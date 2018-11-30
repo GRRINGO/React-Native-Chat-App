@@ -3,7 +3,7 @@ import { TextInput, TouchableOpacity, Text, StyleSheet, KeyboardAvoidingView, Al
 import Layout from '../constants/Layout';
 import Colors from '../constants/Colors';
 import { withNavigation } from 'react-navigation';
-import firebase from 'firebase-react-native';
+import firebase from 'firebase';
 
 const onPressLogin = (username: string, password: string) => {
   firebase.auth().signInWithEmailAndPassword(username, password)

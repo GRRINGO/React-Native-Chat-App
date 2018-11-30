@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../constants/Layout";
 import {View, Text, StyleSheet, TouchableOpacity, Image} from "react-native";
-import * as default_image from "../assets/images/robot-dev.png";
+const default_image = require("../assets/images/robot-dev.png");
 import Dialog from "react-native-dialog";
 
 export interface SettingPictureProps {
