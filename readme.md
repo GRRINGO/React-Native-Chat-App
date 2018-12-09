@@ -26,7 +26,11 @@ Install `expo-cli` globally.
 npm install --global expo-cli
 ```
 
-If you prefer to use yarn the command is `yarn global add expo-cli`.
+Install `Firebase tools` globally.
+
+```shell
+npm install -g firebase-tools
+```
 
 Git clone.
 
@@ -35,17 +39,33 @@ git clone git@version.aalto.fi:CS-E4100/mcc-2018-g13.git # or
 git clone https://version.aalto.fi/gitlab/CS-E4100/mcc-2018-g13.git
 ```
 
+### Frontend
+
 Cd to ChatApp directory and Install dependencies.
 
 ```shell
 cd ChatApp && npm install
 ```
 
+### Backend
+
+Cd to FireBaseFunctions.
+
+```shell
+cd FireBaseFunctions
+```
+
+Deploy the firebase project.
+
+```shell
+firebase deploy
+```
+
 ## Running the App
 
 ### Building the Android .apk-file
 
-Run
+In ChatApp directory run
 
 ```shell
 npm run build
