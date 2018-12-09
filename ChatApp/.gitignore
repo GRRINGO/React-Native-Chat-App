@@ -2,7 +2,6 @@
 /.expo/
 
 *.log
-environment.ts
-environment.js
+
 dist/
-google-services.json
+

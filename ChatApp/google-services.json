@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "271319374434",
+    "firebase_url": "https://mcc-fall-2018-g13.firebaseio.com",
+    "project_id": "mcc-fall-2018-g13",
+    "storage_bucket": "mcc-fall-2018-g13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:271319374434:android:bfda055ce49220f0",
+        "android_client_info": {
+          "package_name": "com.mcc.awesomechatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "271319374434-9viec49ll93oj1gtlp063rqer0qqvg82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByQ9FjZbQsoS5V9_hsF0yI9D900Y2jMTg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
