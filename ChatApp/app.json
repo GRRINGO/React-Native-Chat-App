@@ -31,7 +31,8 @@
       "permissions": ["CAMERA",
         "READ_INTERNAL_STORAGE",
         "READ_EXTERNAL_STORAGE",
-        "ACCESS_FINE_LOCATION"]
+        "ACCESS_FINE_LOCATION",
+        "CAMERA_ROLL"]
     },
     "ios": {
       "bundleIdentifier": "com.mcc.awesomechatapp",
