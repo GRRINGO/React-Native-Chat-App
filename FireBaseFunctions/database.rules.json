@@ -3,7 +3,7 @@
     "users": {
       ".read": true,
       "$uid": {
-        ".write": "!data.exists() || $uid === auth.uid",
+        ".write": "$uid === auth.uid",
         ".indexOn": "displayName",
       }
     },
