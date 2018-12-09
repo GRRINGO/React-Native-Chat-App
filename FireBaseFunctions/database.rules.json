@@ -1,15 +1,17 @@
 {
   "rules": {
     "users": {
+      ".read": true,
       "$uid": {
-        ".indexOn": "displayName",
         ".write": "!data.exists() || $uid === auth.uid",
-        ".read": "auth.uid != null"
+        ".indexOn": "displayName",
       }
     },
     "push_keys": {
-      ".read": false,
-      ".write": false
+      "$uid": {
+        ".read": "!data.exists() || auth.uid === $uid",
+        ".write": "!data.exists() || auth.uid === $uid",
+      }
     },
     "messages": {
       "$chat": {
@@ -19,7 +21,7 @@
     },
     "members": {
       "$chat": {
-        ".read": "auth.uid != null && (!data.exists() || root.child('members').child($chat).child(auth.uid).child('member').val() === true)",
+        ".read": "auth.uid != null",
         ".write": "auth.uid != null && (!data.exists() || root.child('members').child($chat).child(auth.uid).child('member').val() === true)"
       }
     },
