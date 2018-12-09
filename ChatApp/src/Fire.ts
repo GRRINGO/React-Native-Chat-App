@@ -83,7 +83,7 @@ export const chat_adduser = (chat_id: string, user_id: string, adder_id: string)
   updates[`/members/${chat_id}/${user_id}/added`] = new_key;
   updates[`/chats/${chat_id}/lastMessage/`] = message.text;
   updates[`/messages/${chat_id}/${new_key}/`] = message;
-  return fb_db.ref.update(updates);
+  return fb_db.ref.update(updates).catch((err) => console.error(err));
 };
 
 export interface ChatMessage {
@@ -415,26 +415,26 @@ interface UserProfile {
 export const user_login = (username: string, passwd: string) => {
   get_user(username)
     .then((user: firebase.database.DataSnapshot) => {
-    if (user) {
-      user_login_email(user.val().email, passwd);
-    } else {
-      Alert.alert("Username doesn't exist");
-    }
-  });
+      if (user) {
+        user_login_email(user.val().email, passwd);
+      } else {
+        Alert.alert("Username doesn't exist");
+      }
+    }).catch((err) => console.error(err));
 };
 
 export const user_login_email = (email: string, passwd: string) => {
   firebase.auth().signInWithEmailAndPassword(email, passwd)
+    .then((user) => {
+      // Make sure push notifications are saved for the logged in user
+      if (user) {
+        update_expo_push_notification(user.user.uid).catch((err) => { console.error(err); });
+      }
+    })
     .catch((error) => {
       // let errorCode = error.code;
       const errorMessage = error.message;
       Alert.alert(errorMessage);
-    })
-    .then((user) => {
-      // Make sure push notifications are saved for the logged in user
-      if (user) {
-        update_expo_push_notification(user.user.uid);
-      }
     });
 };
 
@@ -442,13 +442,17 @@ export const get_user = (username: string, method?: "displayName" | "email") => 
   if (!method) {
     method = "displayName";
   }
-  return new Promise((resolve, reject) => {
-    firebase.database().ref().child("users").orderByChild(method)
-      .equalTo(username).on("value", (snapshot) => {
+  return new Promise(
+    (resolve, reject) => {
+    firebase.database().ref("users").orderByChild(method).equalTo(username)
+      .on("value", (snapshot) => {
         snapshot.forEach((data) => {
           resolve(data);
         });
-        resolve(undefined);
+        reject("Error in get_user");
+    },
+    (err) => {
+      console.error(err);
     });
   });
 };

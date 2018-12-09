@@ -67,6 +67,7 @@ export default class ChatScreen extends React.Component<ChatScreenProps, ChatScr
         method = "email";
       }
       const userPromise = get_user(value, method)
+      .catch((err) => console.error("ChatScreen error: " + err))
       .then((response: firebase.database.DataSnapshot) => {
         this.setState({
           displayName: response.val().displayName,
@@ -117,7 +118,6 @@ export default class ChatScreen extends React.Component<ChatScreenProps, ChatScr
             });
           }
         });
-        
       });
 
     } else {
