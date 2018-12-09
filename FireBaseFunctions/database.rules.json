@@ -14,7 +14,7 @@
     "messages": {
       "$chat": {
         ".read": "auth.uid != null && root.child('members').child($chat).child(auth.uid).child('member').val() === true",
-        ".write": "auth.uid != null && !data.exists() && root.child('members').child($chat).child(auth.uid).child('member').val() === true)"
+        ".write": "auth.uid != null && !data.exists() && root.child('members').child($chat).child(auth.uid).child('member').val() === true"
       }
     },
     "members": {
