@@ -1,9 +1,37 @@
 {
   "rules": {
-    ".read": true,
-    ".write": true,
+    ".read": false,
+    ".write": false,
     "users": {
       ".indexOn": "displayName",
+      ".write": "$ === auth.uid",
+      ".read": "auth.uid != null"
+    },
+    "push_keys": {
+      ".read": false,
+      ".write": false
+    },
+    "messages": {
+      "$chat": {
+        ".read": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true",
+        ".write": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true"
+      }
+    },
+    "members": {
+      "$chat": {
+        ".read": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true",
+        ".write": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true"
+      }
+    },
+    "image_labels": {
+      ".read": "auth.uid != null",
+      ".write": false
+    },
+    "chats": {
+      "$chat": {
+        ".read": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true",
+        ".write": "auth.uid != null && root.child($members).child($chat).child(auth.uid).val().member === true"
+      }
     }
   }
 }
